@@ -24,10 +24,10 @@ websites:
 
 **srv/salt/app1/init.sls**
 
-`route` will contain the key (ie. web1 or web2)
+`site` will contain the key (ie. web1 or web2)
 `args` will be the dictionary and values accessible by `args.url` and `args.ip` inside the for loop
 ```jinja
-{% for route, args in pillar.get('websites', {}).items() %}
+{% for site, args in pillar.get('websites', {}).items() %}
 {% set myurl = args.url %}
 
 {{args.homepage}}:

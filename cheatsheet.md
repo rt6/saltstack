@@ -27,7 +27,7 @@ $ salt-key -F master
 `/etc/salt/minion`:
 ```sh
 master: 1.1.1.1
-master_finger: 'aa:bb:cc:dd:ee:......xx:yy:zz'
+master_finger: '<master.pub value>'
 ```
 
 4) Get the minion's own fingerprint
@@ -57,7 +57,10 @@ $ sudo salt-key -L
 7) make sure salt-minion has started on the minion
 ```sh
 # -d will run daemon in background without verbose logging
+# start salt-minion as background daemon
 $ sudo salt-minion -d
+
+# start salt-minion with debug level logging
 $ sudo salt-minion -l debug
 ```
 8) test connection on salt-master to minion
